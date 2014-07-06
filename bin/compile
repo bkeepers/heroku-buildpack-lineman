@@ -252,7 +252,7 @@ echo "export PATH=\"\$HOME/bin:\$HOME/node_modules/.bin:\$PATH\"" > $BUILD_DIR/.
 cd $BUILD_DIR
 
 # install Bundler and Sass gems unless enableSass is false
-if [ `$BUILD_DIR/node_modules/.bin/lineman config enableSass` != "false" ]
+if [ "$($BUILD_DIR/node_modules/.bin/lineman config enableSass)" != "false" ]
 then
   echo "-----> Installing bundler and sass gems"
   export GEM_HOME="$BUILD_DIR/gems"
@@ -337,6 +337,3 @@ cat >>boot.sh <<EOF
 EOF
 
 chmod +x boot.sh
-
-
-
